@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
 class PaginaSecundaria extends StatelessWidget {
+  const PaginaSecundaria({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Página Secundária'),
+        title: const Text('Página Secundária'),
         backgroundColor: Colors.white, // Defina a cor desejada para a AppBar
-        iconTheme: IconThemeData(color: Colors.black),
+        iconTheme: const IconThemeData(color: Colors.black),
         actions: [
           IconButton(
             onPressed: () {
@@ -22,7 +24,11 @@ class PaginaSecundaria extends StatelessWidget {
         ],
       ),
       body: Center(
-        child: Text('Conteúdo da Página Secundária'),
+        child: Image.asset(
+          'assets/fotoPrincipal.jpeg', // Caminho para a imagem do corpo
+          width: 200, // Largura da imagem do corpo
+          height: 200, // Altura da imagem do corpo
+        ),
       ),
     );
   }
