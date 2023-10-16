@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projeto_tela_flutter/paginasecundaria.dart';
 
 class PaginaInicial extends StatefulWidget {
   const PaginaInicial({super.key});
@@ -34,10 +35,14 @@ class _PaginaInicialState extends State<PaginaInicial> {
                 ),
               ),
               const Spacer(),
-              InkWell(
+              GestureDetector(
                 onTap: () {
-                  // Adicione a ação a ser executada quando o botão for clicado
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => PaginaSecundaria()));
                 },
+                
                 child: Container(
                   margin: EdgeInsets.only(right: iconMarginRight),
                   child: Transform.translate(
@@ -97,7 +102,9 @@ class PesquisaBar extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(width: 8.0), // Espaço entre a caixa de pesquisa e o botão de pesquisa
+        const SizedBox(
+            width:
+                8.0), // Espaço entre a caixa de pesquisa e o botão de pesquisa
         Container(
           width: 55.0, // Largura do botão
           height: 50.0, // Altura do botão
@@ -112,10 +119,12 @@ class PesquisaBar extends StatelessWidget {
             onPressed: () {
               // Ação a ser executada quando o botão de pesquisa for clicado
             },
-            icon: const Icon(Icons.search, color: Colors.white), // Ícone de pesquisa e cor do ícone
+            icon: const Icon(Icons.search,
+                color: Colors.white), // Ícone de pesquisa e cor do ícone
           ),
         ),
       ],
     );
   }
 }
+
