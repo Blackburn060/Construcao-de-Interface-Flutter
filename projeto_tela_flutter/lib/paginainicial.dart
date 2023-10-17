@@ -40,7 +40,7 @@ class _PaginaInicialState extends State<PaginaInicial> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => PaginaSecundaria()));
+                          builder: (context) => const PaginaSecundaria()));
                 },
                 
                 child: Container(
