@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_tela_flutter/paginasecundaria.dart';
+import 'package:projeto_tela_flutter/paginaSecundaria.dart';
 
 class PaginaInicial extends StatefulWidget {
-  const PaginaInicial({super.key});
+  const PaginaInicial({Key? key}) : super(key: key);
 
   @override
   State<PaginaInicial> createState() => _PaginaInicialState();
@@ -14,104 +14,110 @@ class _PaginaInicialState extends State<PaginaInicial> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
-    return Container(
-      width: size.width,
-      height: 300,
-      color: Colors.white,
-      padding: const EdgeInsets.all(20.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              const Text(
-                "Hi John, ",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const Spacer(),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const PaginaSecundaria()));
-                },
-                
-                child: Container(
-                  margin: EdgeInsets.only(right: iconMarginRight),
-                  child: Transform.translate(
-                    offset: Offset(0.0, iconVerticalOffset),
-                    child: Image.asset(
-                      'assets/IconePaginaPrincipal.png',
-                      width: 40.0,
-                      height: 40.0,
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(left: 20.0), // Margem direita para o texto "Hi John, "
+                  child: const Text(
+                    "Hi John, ",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
-              ),
-            ],
-          ),
-          const Text(
-            "Good Morning!",
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold,
+                const Spacer(),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const PaginaSecundaria()));
+                  },
+                  child: Container(
+                    margin: EdgeInsets.only(right: iconMarginRight),
+                    child: Transform.translate(
+                      offset: Offset(0.0, iconVerticalOffset),
+                      child: Image.asset(
+                        'assets/IconePaginaPrincipal.png',
+                        width: 40.0,
+                        height: 40.0,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ),
-          const SizedBox(
-              height: 20.0), // Espaço entre os textos e a barra de pesquisa
-          const PesquisaBar(), // Usando o widget PesquisaBar aqui
-        ],
+            Container(
+              margin: const EdgeInsets.only(left: 20.0), // Margem superior para o texto "Good Morning!"
+              child: const Text(
+                "Good Morning!",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 20.0,
+            ),
+            const PesquisaBar(),
+          ],
+        ),
       ),
     );
   }
 }
 
+
 class PesquisaBar extends StatelessWidget {
-  const PesquisaBar({super.key});
+  const PesquisaBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(
+        Container(
+          width: 360.0, // Largura máxima da barra de pesquisa
+          margin: const EdgeInsets.only(top: 20.0, left: 20.0, right: 8.0), // Ajuste o right para a barra de pesquisa
           child: TextField(
             decoration: InputDecoration(
               hintText: 'Search for a topic',
-              hintStyle: const TextStyle(color: Colors.grey), // Cor do hintText
+              hintStyle: const TextStyle(color: Colors.grey),
               enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(
-                  color: Colors.grey.withOpacity(0.3), // Cor da borda
+                  color: Colors.grey.withOpacity(0.3),
                 ),
                 borderRadius: BorderRadius.circular(10.0),
               ),
               focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(
-                  color: Colors.grey.withOpacity(
-                      0.5), // Cor da borda quando a caixa de pesquisa está em foco
+                  color: Colors.grey.withOpacity(0.5),
                 ),
                 borderRadius: BorderRadius.circular(10.0),
               ),
             ),
           ),
         ),
-        const SizedBox(
-            width:
-                8.0), // Espaço entre a caixa de pesquisa e o botão de pesquisa
         Container(
-          width: 55.0, // Largura do botão
-          height: 50.0, // Altura do botão
+          width: 55.0,
+          height: 50.0,
+          margin: const EdgeInsets.only(top: 20.0), // Ajuste o left para o botão de pesquisa
           decoration: BoxDecoration(
-            color: Colors.black, // Cor de fundo do botão
+            color: Colors.black,
             border: Border.all(
-              color: Colors.black, // Cor da borda do botão
+              color: Colors.black,
             ),
             borderRadius: BorderRadius.circular(10.0),
           ),
@@ -119,12 +125,10 @@ class PesquisaBar extends StatelessWidget {
             onPressed: () {
               // Ação a ser executada quando o botão de pesquisa for clicado
             },
-            icon: const Icon(Icons.search,
-                color: Colors.white), // Ícone de pesquisa e cor do ícone
+            icon: const Icon(Icons.search, color: Colors.white),
           ),
         ),
       ],
     );
   }
 }
-
