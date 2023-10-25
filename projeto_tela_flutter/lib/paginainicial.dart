@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_tela_flutter/paginaSecundaria.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PaginaInicial extends StatefulWidget {
   const PaginaInicial({Key? key}) : super(key: key);
@@ -28,12 +29,14 @@ class _PaginaInicialState extends State<PaginaInicial> {
                 Container(
                   margin: const EdgeInsets.only(
                       left: 20.0), // Margem direita para o texto "Hi John, "
-                  child: const Text(
+                  child: Text(
                     "Hi John, ",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.bold,
+                    style: GoogleFonts.poppins(
+                      textStyle: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),
@@ -62,12 +65,14 @@ class _PaginaInicialState extends State<PaginaInicial> {
             Container(
               margin: const EdgeInsets.only(
                   left: 20.0), // Margem superior para o texto "Good Morning!"
-              child: const Text(
+              child: Text(
                 "Good Morning!",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
+                style: GoogleFonts.poppins(
+                  textStyle: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 25.0,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
@@ -150,16 +155,18 @@ class ConteudoPrincipal extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Padding(
-          padding: EdgeInsets.only(
+        Padding(
+          padding: const EdgeInsets.only(
             left: 20.0, // Margem à esquerda para mover o título
             top: 15.0, // Espaçamento entre o título e a imagem
           ),
           child: Text(
             "Today's Article",
-            style: TextStyle(
-              fontSize: 24.0,
-              fontWeight: FontWeight.bold,
+            style: GoogleFonts.poppins(
+              textStyle: const TextStyle(
+                fontSize: 24.0,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ),
@@ -184,7 +191,8 @@ class ConteudoPrincipal extends StatelessWidget {
                 width: 20.0), // Espaçamento entre o botão e a margem esquerda
             ElevatedButton(
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(const Color.fromARGB(255, 231, 223, 223)),
+                backgroundColor: MaterialStateProperty.all(
+                    const Color.fromARGB(255, 231, 223, 223)),
                 elevation: MaterialStateProperty.all(0.0),
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
