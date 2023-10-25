@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PaginaSecundaria extends StatelessWidget {
   const PaginaSecundaria({Key? key}) : super(key: key);
@@ -44,12 +45,14 @@ class PaginaSecundaria extends StatelessWidget {
               alignment: Alignment.centerLeft,
               child: Container(
                 transform: Matrix4.translationValues(0, -50, 0),
-                child: const Text(
+                child: Text(
                   '               octuber 4, 2021 * 3 min read',
-                  style: TextStyle(
-                    fontSize: 11,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 15, 15, 15),
+                  style: GoogleFonts.poppins(
+                    textStyle: const TextStyle(
+                      fontSize: 11.0,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 15, 15, 15),
+                    ),
                   ),
                 ),
               ),
@@ -59,12 +62,14 @@ class PaginaSecundaria extends StatelessWidget {
               alignment: Alignment.centerLeft,
               child: Container(
                 transform: Matrix4.translationValues(18, -46, 0),
-                child: const Text(
+                child: Text(
                   '  How to get started as a mobile app designer and get your first client?',
-                  style: TextStyle(
-                    fontSize: 26,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 15, 15, 15),
+                  style: GoogleFonts.poppins(
+                    textStyle: const TextStyle(
+                      fontSize: 26.0,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 15, 15, 15),
+                    ),
                   ),
                 ),
               ),
@@ -74,11 +79,13 @@ class PaginaSecundaria extends StatelessWidget {
               alignment: Alignment.centerLeft,
               child: Container(
                 transform: Matrix4.translationValues(6, -29, 0),
-                child: const Text(
+                child: Text(
                   '  Everyone wants to make the next great mobile app. It can be an extremely profitable way to make some money if you know what youre doing.',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Color.fromARGB(255, 15, 15, 15),
+                  style: GoogleFonts.poppins(
+                    textStyle: const TextStyle(
+                      fontSize: 14.0,
+                      color: Color.fromARGB(255, 15, 15, 15),
+                    ),
                   ),
                 ),
               ),
@@ -87,11 +94,13 @@ class PaginaSecundaria extends StatelessWidget {
               alignment: Alignment.centerLeft,
               child: Container(
                 transform: Matrix4.translationValues(3, -19, 0),
-                child: const Text(
+                child: Text(
                   '  If you ve got a great mobile app idea and decided to consult with a developer or an app development company, you may have been surprised to hear how costly it is to outsource development.',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Color.fromARGB(255, 15, 15, 15),
+                  style: GoogleFonts.poppins(
+                    textStyle: const TextStyle(
+                      fontSize: 14.0,
+                      color: Color.fromARGB(255, 15, 15, 15),
+                    ),
                   ),
                 ),
               ),
@@ -100,11 +109,13 @@ class PaginaSecundaria extends StatelessWidget {
               alignment: Alignment.centerLeft,
               child: Container(
                 transform: Matrix4.translationValues(6, -1, 0),
-                child: const Text(
+                child: Text(
                   '  So thats when the thought hit you, I can just do learn to do this myself."',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Color.fromARGB(255, 15, 15, 15),
+                  style: GoogleFonts.poppins(
+                    textStyle: const TextStyle(
+                      fontSize: 14.0,
+                      color: Color.fromARGB(255, 15, 15, 15),
+                    ),
                   ),
                 ),
               ),
@@ -118,12 +129,13 @@ class PaginaSecundaria extends StatelessWidget {
           onPressed: () {
             // Ação a ser executada quando o botão "Read more" for clicado
           },
-          child: const Text(
+          child: Text(
             'Read more',
-            style: TextStyle(
-              
-              fontSize: 18,
-              color: Colors.white,
+            style: GoogleFonts.poppins(
+              textStyle: const TextStyle(
+                fontSize: 18.0,
+                color: Colors.white,
+              ),
             ),
           ),
         ),
