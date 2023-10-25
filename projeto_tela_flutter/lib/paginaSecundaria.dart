@@ -124,17 +124,36 @@ class PaginaSecundaria extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: Container(
-        color: Colors.black,
-        child: TextButton(
-          onPressed: () {
-            // Ação a ser executada quando o botão "Read more" for clicado
-          },
-          child: Text(
-            'Read more',
-            style: GoogleFonts.poppins(
-              textStyle: const TextStyle(
-                fontSize: 18.0,
-                color: Colors.white,
+        color: Color.fromARGB(255, 255, 255, 255),
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(minWidth: 8),
+          child: Container(
+            margin: const EdgeInsets.only(
+                top: 1), // Ajuste o valor superior desejado
+            child: TextButton(
+              onPressed: () {
+                // Ação a ser executada quando o botão "Read more" for clicado
+              },
+              style: ButtonStyle(
+                minimumSize: MaterialStateProperty.all(
+                    const Size(100, 0)), // Ajuste o tamanho desejado
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                        12.0), // Ajuste o valor de acordo com seu desejo
+                  ),
+                ),
+                backgroundColor:
+                    MaterialStateProperty.all(Color.fromARGB(255, 0, 0, 0)),
+                foregroundColor: MaterialStateProperty.all(Colors.white),
+              ),
+              child: Text(
+                'Read more',
+                style: GoogleFonts.poppins(
+                  textStyle: const TextStyle(
+                    fontSize: 18.0,
+                  ),
+                ),
               ),
             ),
           ),
