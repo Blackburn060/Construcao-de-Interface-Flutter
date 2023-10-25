@@ -133,9 +133,7 @@ class PesquisaBar extends StatelessWidget {
             borderRadius: BorderRadius.circular(10.0),
           ),
           child: IconButton(
-            onPressed: () {
-              // Ação a ser executada quando o botão de pesquisa for clicado
-            },
+            onPressed: () {},
             icon: const Icon(Icons.search, color: Colors.white),
           ),
         ),
@@ -257,7 +255,7 @@ class ConteudoPrincipal extends StatelessWidget {
 }
 
 class ConteudoSecundario extends StatelessWidget {
-  const ConteudoSecundario({super.key});
+  const ConteudoSecundario({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -269,15 +267,116 @@ class ConteudoSecundario extends StatelessWidget {
             left: 20.0,
             top: 15.0,
           ),
-          child: Text(
-            "More Articles",
-            style: GoogleFonts.poppins(
-              textStyle: const TextStyle(
-                fontSize: 24.0,
-                fontWeight: FontWeight.bold,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "More Articles",
+                style: GoogleFonts.poppins(
+                  textStyle: const TextStyle(
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 20.0),
+                child: Text(
+                  "See All",
+                  style: GoogleFonts.poppins(
+                    textStyle: const TextStyle(
+                      fontSize: 10.0,
+                      color: Color.fromARGB(255, 71, 66, 66),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 20),
+        Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0, right: 15.0), 
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(15.0),
+                child: Image.asset(
+                  "Comment-Construire-un-reseau-ferre-dans-Minecraft-780x439.jpeg",
+                  width: 130,
+                  height: 90,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
-          ),
+            const SizedBox(width: 10),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Make a Successful Instagram",
+                  style: GoogleFonts.poppins(
+                    textStyle: const TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 10),
+                Text(
+                  "October 4, 2021  •  3 min read",
+                  style: GoogleFonts.poppins(
+                    textStyle: const TextStyle(
+                      fontSize: 14.0,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+        const SizedBox(height: 20),
+        Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(right: 15.0, left: 20.0), 
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(15.0),
+                child: Image.asset(
+                  "Comment-Construire-un-reseau-ferre-dans-Minecraft-780x439.jpeg",
+                  width: 130,
+                  height: 90,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            const SizedBox(width: 10),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Get Started in 3D Animation",
+                  style: GoogleFonts.poppins(
+                    textStyle: const TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 10),
+                Text(
+                  "October 4, 2021  •  3 min read",
+                  style: GoogleFonts.poppins(
+                    textStyle: const TextStyle(
+                      fontSize: 14.0,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
       ],
     );
