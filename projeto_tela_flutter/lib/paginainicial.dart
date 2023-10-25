@@ -16,70 +16,72 @@ class _PaginaInicialState extends State<PaginaInicial> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Container(
-                  margin: const EdgeInsets.only(
-                      left: 20.0), // Margem direita para o texto "Hi John, "
-                  child: const Text(
-                    "Hi John, ",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                const Spacer(),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const PaginaSecundaria()));
-                  },
-                  child: Container(
-                    margin: EdgeInsets.only(right: iconMarginRight),
-                    child: Transform.translate(
-                      offset: Offset(0.0, iconVerticalOffset),
-                      child: Image.asset(
-                        'assets/IconePaginaPrincipal.png',
-                        width: 40.0,
-                        height: 40.0,
+      body: SingleChildScrollView(
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Container(
+                    margin: const EdgeInsets.only(
+                        left: 20.0), 
+                    child: const Text(
+                      "Hi John, ",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            Container(
-              margin: const EdgeInsets.only(
-                  left: 20.0), // Margem superior para o texto "Good Morning!"
-              child: const Text(
-                "Good Morning!",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
+                  const Spacer(),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const PaginaSecundaria()));
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(right: iconMarginRight),
+                      child: Transform.translate(
+                        offset: Offset(0.0, iconVerticalOffset),
+                        child: Image.asset(
+                          'assets/IconePaginaPrincipal.png',
+                          width: 40.0,
+                          height: 40.0,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Container(
+                margin: const EdgeInsets.only(
+                    left: 20.0),
+                child: const Text(
+                  "Good Morning!",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(
-              height: 20.0,
-            ),
-            const PesquisaBar(),
-            const SizedBox(
-                height:
-                    42.0), // Espaço entre a PesquisaBar e o ConteudoPrincipal
-            const ConteudoPrincipal(),
-          ],
+              const SizedBox(
+                height: 20.0,
+              ),
+              const PesquisaBar(),
+              const SizedBox(
+                  height:
+                      32.0),
+              const ConteudoPrincipal(),
+              const ConteudoSecundario(),
+            ],
+          ),
         ),
       ),
     );
@@ -94,11 +96,11 @@ class PesquisaBar extends StatelessWidget {
     return Row(
       children: [
         Container(
-          width: 360.0, // Largura máxima da barra de pesquisa
+          width: 360.0, 
           margin: const EdgeInsets.only(
               top: 20.0,
               left: 20.0,
-              right: 8.0), // Ajuste o right para a barra de pesquisa
+              right: 8.0),
           child: TextField(
             decoration: InputDecoration(
               hintText: 'Search for a topic',
@@ -122,7 +124,7 @@ class PesquisaBar extends StatelessWidget {
           width: 55.0,
           height: 50.0,
           margin: const EdgeInsets.only(
-              top: 20.0), // Ajuste o left para o botão de pesquisa
+              top: 20.0),
           decoration: BoxDecoration(
             color: Colors.black,
             border: Border.all(
@@ -152,8 +154,8 @@ class ConteudoPrincipal extends StatelessWidget {
       children: [
         const Padding(
           padding: EdgeInsets.only(
-            left: 20.0, // Margem à esquerda para mover o título
-            top: 15.0, // Espaçamento entre o título e a imagem
+            left: 20.0,
+            top: 15.0,
           ),
           child: Text(
             "Today's Article",
@@ -163,33 +165,33 @@ class ConteudoPrincipal extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(height: 20.0), // Espaçamento entre o título e a imagem
+        const SizedBox(height: 20.0),
         Container(
           margin: const EdgeInsets.only(right: 20.0, left: 20.0),
-          width: 450.0, // Largura da imagem
-          height: 250.0, // Altura da imagem
+          width: 450.0,
+          height: 250.0,
           decoration: BoxDecoration(
-            borderRadius:
-                BorderRadius.circular(20.0), // Defina o raio de borda desejado
+            borderRadius: BorderRadius.circular(20.0),
             image: const DecorationImage(
               image: AssetImage('assets/fotoPrincipal.png'),
               fit: BoxFit.cover,
             ),
           ),
         ),
-        const SizedBox(height: 16.0), // Espaçamento entre a imagem e o botão
+        const SizedBox(height: 16.0),
         Row(
           children: [
             const SizedBox(
-                width: 20.0), // Espaçamento entre o botão e a margem esquerda
+              width: 20.0,
+            ),
             ElevatedButton(
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(const Color.fromARGB(255, 231, 223, 223)),
+                backgroundColor: MaterialStateProperty.all(
+                    const Color.fromARGB(255, 231, 223, 223)),
                 elevation: MaterialStateProperty.all(0.0),
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                        7.0), // Ajuste o raio de borda desejado
+                    borderRadius: BorderRadius.circular(7.0),
                   ),
                 ),
               ),
@@ -202,6 +204,70 @@ class ConteudoPrincipal extends StatelessWidget {
               ),
             ),
           ],
+        ),
+        const SizedBox(height: 16.0),
+        const Padding(
+          padding: EdgeInsets.only(
+            left: 20.0,
+          ),
+          child: Text(
+            "How to get started as a mobile app designer\nand get your first client",
+            style: TextStyle(
+              fontSize: 18.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        const Padding(
+          padding: EdgeInsets.only(
+            left: 20.0,
+            top: 8.0,
+          ),
+          child: Text(
+            "October 4, 2021  •  3 min read",
+            style: TextStyle(
+              fontSize: 11.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        const Padding(
+          padding: EdgeInsets.only(
+            left: 20.0,
+            top: 30.0,
+            right: 20.0
+          ),
+          child: Divider(
+            height: 10.0,
+            thickness: 1.0,
+            color: Color.fromARGB(255, 225, 219, 219),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class ConteudoSecundario extends StatelessWidget {
+  const ConteudoSecundario({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: EdgeInsets.only(
+            left: 20.0,
+            top: 15.0,
+          ),
+          child: Text(
+            "More Articles",
+            style: TextStyle(
+              fontSize: 24.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ),
       ],
     );
