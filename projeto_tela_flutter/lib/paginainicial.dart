@@ -26,7 +26,8 @@ class _PaginaInicialState extends State<PaginaInicial> {
             Row(
               children: [
                 Container(
-                  margin: const EdgeInsets.only(left: 20.0), // Margem direita para o texto "Hi John, "
+                  margin: const EdgeInsets.only(
+                      left: 20.0), // Margem direita para o texto "Hi John, "
                   child: const Text(
                     "Hi John, ",
                     style: TextStyle(
@@ -59,7 +60,8 @@ class _PaginaInicialState extends State<PaginaInicial> {
               ],
             ),
             Container(
-              margin: const EdgeInsets.only(left: 20.0), // Margem superior para o texto "Good Morning!"
+              margin: const EdgeInsets.only(
+                  left: 20.0), // Margem superior para o texto "Good Morning!"
               child: const Text(
                 "Good Morning!",
                 style: TextStyle(
@@ -73,13 +75,16 @@ class _PaginaInicialState extends State<PaginaInicial> {
               height: 20.0,
             ),
             const PesquisaBar(),
+            const SizedBox(
+                height:
+                    42.0), // Espaço entre a PesquisaBar e o ConteudoPrincipal
+            const ConteudoPrincipal(),
           ],
         ),
       ),
     );
   }
 }
-
 
 class PesquisaBar extends StatelessWidget {
   const PesquisaBar({Key? key}) : super(key: key);
@@ -90,7 +95,10 @@ class PesquisaBar extends StatelessWidget {
       children: [
         Container(
           width: 360.0, // Largura máxima da barra de pesquisa
-          margin: const EdgeInsets.only(top: 20.0, left: 20.0, right: 8.0), // Ajuste o right para a barra de pesquisa
+          margin: const EdgeInsets.only(
+              top: 20.0,
+              left: 20.0,
+              right: 8.0), // Ajuste o right para a barra de pesquisa
           child: TextField(
             decoration: InputDecoration(
               hintText: 'Search for a topic',
@@ -113,7 +121,8 @@ class PesquisaBar extends StatelessWidget {
         Container(
           width: 55.0,
           height: 50.0,
-          margin: const EdgeInsets.only(top: 20.0), // Ajuste o left para o botão de pesquisa
+          margin: const EdgeInsets.only(
+              top: 20.0), // Ajuste o left para o botão de pesquisa
           decoration: BoxDecoration(
             color: Colors.black,
             border: Border.all(
@@ -127,6 +136,72 @@ class PesquisaBar extends StatelessWidget {
             },
             icon: const Icon(Icons.search, color: Colors.white),
           ),
+        ),
+      ],
+    );
+  }
+}
+
+class ConteudoPrincipal extends StatelessWidget {
+  const ConteudoPrincipal({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Padding(
+          padding: EdgeInsets.only(
+            left: 20.0, // Margem à esquerda para mover o título
+            top: 15.0, // Espaçamento entre o título e a imagem
+          ),
+          child: Text(
+            "Today's Article",
+            style: TextStyle(
+              fontSize: 24.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        const SizedBox(height: 20.0), // Espaçamento entre o título e a imagem
+        Container(
+          margin: const EdgeInsets.only(right: 20.0, left: 20.0),
+          width: 450.0, // Largura da imagem
+          height: 250.0, // Altura da imagem
+          decoration: BoxDecoration(
+            borderRadius:
+                BorderRadius.circular(20.0), // Defina o raio de borda desejado
+            image: const DecorationImage(
+              image: AssetImage('assets/fotoPrincipal.png'),
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        const SizedBox(height: 16.0), // Espaçamento entre a imagem e o botão
+        Row(
+          children: [
+            const SizedBox(
+                width: 20.0), // Espaçamento entre o botão e a margem esquerda
+            ElevatedButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(const Color.fromARGB(255, 231, 223, 223)),
+                elevation: MaterialStateProperty.all(0.0),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                        7.0), // Ajuste o raio de borda desejado
+                  ),
+                ),
+              ),
+              onPressed: () {
+                // Lida com a ação do botão
+              },
+              child: const Text(
+                "Design",
+                style: TextStyle(color: Colors.black),
+              ),
+            ),
+          ],
         ),
       ],
     );
