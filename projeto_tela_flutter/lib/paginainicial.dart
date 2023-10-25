@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_tela_flutter/paginaSecundaria.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PaginaInicial extends StatefulWidget {
   const PaginaInicial({Key? key}) : super(key: key);
@@ -26,14 +27,14 @@ class _PaginaInicialState extends State<PaginaInicial> {
               Row(
                 children: [
                   Container(
-                    margin: const EdgeInsets.only(
-                        left: 20.0), 
-                    child: const Text(
+                    margin: const EdgeInsets.only(left: 20.0),
+                    child: Text(
                       "Hi John, ",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.bold,
+                      style: GoogleFonts.poppins(
+                        textStyle: const TextStyle(
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
@@ -60,14 +61,14 @@ class _PaginaInicialState extends State<PaginaInicial> {
                 ],
               ),
               Container(
-                margin: const EdgeInsets.only(
-                    left: 20.0),
-                child: const Text(
+                margin: const EdgeInsets.only(left: 20.0),
+                child: Text(
                   "Good Morning!",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
+                  style: GoogleFonts.poppins(
+                    textStyle: const TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
@@ -75,9 +76,7 @@ class _PaginaInicialState extends State<PaginaInicial> {
                 height: 20.0,
               ),
               const PesquisaBar(),
-              const SizedBox(
-                  height:
-                      32.0),
+              const SizedBox(height: 32.0),
               const ConteudoPrincipal(),
               const ConteudoSecundario(),
             ],
@@ -96,15 +95,17 @@ class PesquisaBar extends StatelessWidget {
     return Row(
       children: [
         Container(
-          width: 360.0, 
-          margin: const EdgeInsets.only(
-              top: 20.0,
-              left: 20.0,
-              right: 8.0),
+          width: 360.0,
+          margin: const EdgeInsets.only(top: 20.0, left: 20.0, right: 8.0),
           child: TextField(
             decoration: InputDecoration(
               hintText: 'Search for a topic',
-              hintStyle: const TextStyle(color: Colors.grey),
+              hintStyle: GoogleFonts.poppins(
+                textStyle: const TextStyle(
+                  fontSize: 14.0,
+                  color: Colors.grey,
+                ),
+              ),
               enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(
                   color: Colors.grey.withOpacity(0.3),
@@ -123,8 +124,7 @@ class PesquisaBar extends StatelessWidget {
         Container(
           width: 55.0,
           height: 50.0,
-          margin: const EdgeInsets.only(
-              top: 20.0),
+          margin: const EdgeInsets.only(top: 20.0),
           decoration: BoxDecoration(
             color: Colors.black,
             border: Border.all(
@@ -152,16 +152,18 @@ class ConteudoPrincipal extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Padding(
-          padding: EdgeInsets.only(
+        Padding(
+          padding: const EdgeInsets.only(
             left: 20.0,
             top: 15.0,
           ),
           child: Text(
             "Today's Article",
-            style: TextStyle(
-              fontSize: 24.0,
-              fontWeight: FontWeight.bold,
+            style: GoogleFonts.poppins(
+              textStyle: const TextStyle(
+                fontSize: 24.0,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ),
@@ -198,45 +200,51 @@ class ConteudoPrincipal extends StatelessWidget {
               onPressed: () {
                 // Lida com a ação do botão
               },
-              child: const Text(
+              child: Text(
                 "Design",
-                style: TextStyle(color: Colors.black),
+                style: GoogleFonts.poppins(
+                  textStyle: const TextStyle(
+                    fontSize: 10.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
               ),
             ),
           ],
         ),
         const SizedBox(height: 16.0),
-        const Padding(
-          padding: EdgeInsets.only(
+        Padding(
+          padding: const EdgeInsets.only(
             left: 20.0,
           ),
           child: Text(
             "How to get started as a mobile app designer\nand get your first client",
-            style: TextStyle(
-              fontSize: 18.0,
-              fontWeight: FontWeight.bold,
+            style: GoogleFonts.poppins(
+              textStyle: const TextStyle(
+                fontSize: 18.0,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ),
-        const Padding(
-          padding: EdgeInsets.only(
+        Padding(
+          padding: const EdgeInsets.only(
             left: 20.0,
             top: 8.0,
           ),
           child: Text(
             "October 4, 2021  •  3 min read",
-            style: TextStyle(
-              fontSize: 11.0,
-              fontWeight: FontWeight.bold,
+            style: GoogleFonts.poppins(
+              textStyle: const TextStyle(
+                fontSize: 11.0,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ),
         const Padding(
-          padding: EdgeInsets.only(
-            left: 20.0,
-            top: 30.0,
-            right: 20.0
-          ),
+          padding: EdgeInsets.only(left: 20.0, top: 30.0, right: 20.0),
           child: Divider(
             height: 10.0,
             thickness: 1.0,
@@ -253,19 +261,21 @@ class ConteudoSecundario extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.only(
+          padding: const EdgeInsets.only(
             left: 20.0,
             top: 15.0,
           ),
           child: Text(
             "More Articles",
-            style: TextStyle(
-              fontSize: 24.0,
-              fontWeight: FontWeight.bold,
+            style: GoogleFonts.poppins(
+              textStyle: const TextStyle(
+                fontSize: 24.0,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ),
